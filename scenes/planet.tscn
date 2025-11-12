@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvulgyfneosw6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wmcs"]
+radius = 32.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_cktii"]
+
+[node name="planet" type="RigidBody2D"]
+mass = 0.395
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0wmcs")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(1.9073486e-06, 5.722046e-06)
+scale = Vector2(64.07257, 64.00001)
+mesh = SubResource("SphereMesh_cktii")

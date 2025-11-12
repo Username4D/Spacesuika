@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://uhq803grhu7t"]
+
+[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_g7g4h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j8ivh"]
+radius = 257.99225
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g7g4h"]
+radius = 32.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_j8ivh"]
+
+[node name="test_scene" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(576, 288)
+gravity_space_override = 3
+gravity_point = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_j8ivh")
+
+[node name="planet" parent="." instance=ExtResource("1_g7g4h")]
+position = Vector2(704, 416)
+mass = 0.28
+gravity_scale = 0.509
+linear_damp_mode = 1
+linear_damp = 1.041
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 288)
+shape = SubResource("CircleShape2D_g7g4h")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+modulate = Color(0.17254902, 1, 1, 1)
+position = Vector2(576, 288)
+scale = Vector2(64.07257, 64.00001)
+mesh = SubResource("SphereMesh_j8ivh")
