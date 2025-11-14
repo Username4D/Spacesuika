@@ -4,7 +4,7 @@ var shoot_start = Vector2.ZERO
 var shoot_distance
 var mesh_start = Vector2.ZERO
 
-var planet = preload("res://scenes/planet.tscn")
+var planet = preload("res://scenes/planets/mercury.tscn")
 
 func _process(delta: float) -> void:
 	if not $Button.button_pressed and not $Button/Button2.button_pressed:
@@ -19,7 +19,9 @@ func _process(delta: float) -> void:
 
 func _on_button_button_up() -> void:
 	var new_shot = planet.instantiate()
+	new_shot.index = gameplay_handler.get_next_index()
 	new_shot.position = $Button/MeshInstance2D.global_position
+	new_shot.scale = new_shot.nscale
 	self.add_child(new_shot)
 	new_shot.apply_impulse(shoot_distance * -1)
 	print(shoot_distance)

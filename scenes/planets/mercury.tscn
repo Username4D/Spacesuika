@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3ct7k7evklvo"]
+
+[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_hqfxl"]
+[ext_resource type="Texture2D" uid="uid://bveabwrovpkol" path="res://assets/planets/mercury.svg" id="2_42d1q"]
+[ext_resource type="PackedScene" uid="uid://b5erw4d7e5d3d" path="res://scenes/planets/venus.tscn" id="2_d8y16"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_42d1q"]
+radius = 38.0
+
+[node name="mercury" instance=ExtResource("1_hqfxl")]
+scale = Vector2(0.4, 0.4)
+next_planet = ExtResource("2_d8y16")
+nscale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_42d1q")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_42d1q")

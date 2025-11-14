@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://uhq803grhu7t"]
+[gd_scene load_steps=6 format=3 uid="uid://uhq803grhu7t"]
 
-[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_g7g4h"]
 [ext_resource type="Script" uid="uid://bfx5nire4eyt6" path="res://scripts/test_scene.gd" id="1_j8ivh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8ivh"]
@@ -23,11 +22,6 @@ gravity_point = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_j8ivh")
-
-[node name="planet" parent="." instance=ExtResource("1_g7g4h")]
-position = Vector2(704, 416)
-linear_damp_mode = 1
-linear_damp = 1.041
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

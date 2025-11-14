@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://sjcu2wfiyqjk"]
+
+[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_fpsqh"]
+[ext_resource type="PackedScene" uid="uid://ccaro35aghr54" path="res://scenes/planets/uranus.tscn" id="2_cyfv8"]
+[ext_resource type="Texture2D" uid="uid://dnndx5hp6goor" path="res://assets/planets/saturn.svg" id="2_dvlhj"]
+
+[node name="saturn" instance=ExtResource("1_fpsqh")]
+scale = Vector2(1.7, 1.7)
+next_planet = ExtResource("2_cyfv8")
+nscale = Vector2(1.7, 1.7)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_dvlhj")

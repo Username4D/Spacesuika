@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://viskjde1k6cw"]
+
+[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_ujig8"]
+[ext_resource type="PackedScene" uid="uid://barolkpnudaa6" path="res://scenes/planets/jupiter.tscn" id="2_as5al"]
+[ext_resource type="Texture2D" uid="uid://5a7o4bnw82a1" path="res://assets/planets/mars.svg" id="2_m15u1"]
+
+[node name="mars" instance=ExtResource("1_ujig8")]
+scale = Vector2(1.1, 1.1)
+next_planet = ExtResource("2_as5al")
+nscale = Vector2(1.1, 1.1)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_m15u1")

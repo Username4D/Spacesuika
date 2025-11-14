@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5erw4d7e5d3d"]
+
+[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_bwd8r"]
+[ext_resource type="PackedScene" uid="uid://blckr51tkht4g" path="res://scenes/planets/earth.tscn" id="2_4c51u"]
+[ext_resource type="Texture2D" uid="uid://cck1lkhchwlh7" path="res://assets/planets/venus.svg" id="2_b354m"]
+
+[node name="venus" instance=ExtResource("1_bwd8r")]
+scale = Vector2(0.6, 0.6)
+next_planet = ExtResource("2_4c51u")
+nscale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_b354m")

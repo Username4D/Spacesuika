@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://barolkpnudaa6"]
+
+[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_rid86"]
+[ext_resource type="PackedScene" uid="uid://sjcu2wfiyqjk" path="res://scenes/planets/saturn.tscn" id="2_k0muh"]
+
+[node name="jupiter" instance=ExtResource("1_rid86")]
+scale = Vector2(1.4, 1.4)
+next_planet = ExtResource("2_k0muh")
+nscale = Vector2(1.4, 1.4)

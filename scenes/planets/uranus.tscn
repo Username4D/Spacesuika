@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccaro35aghr54"]
+
+[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_nvkmq"]
+[ext_resource type="Texture2D" uid="uid://gucj3tmmok00" path="res://assets/planets/uranus.svg" id="2_5qgu2"]
+[ext_resource type="PackedScene" uid="uid://brtp2aoqh6f46" path="res://scenes/planets/neptun.tscn" id="2_wkw54"]
+
+[node name="uranus" instance=ExtResource("1_nvkmq")]
+scale = Vector2(2.1, 2.1)
+next_planet = ExtResource("2_wkw54")
+nscale = Vector2(2.1, 2.1)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_5qgu2")

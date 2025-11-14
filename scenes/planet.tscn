@@ -1,17 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvulgyfneosw6"]
+[gd_scene load_steps=5 format=3 uid="uid://cvulgyfneosw6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0wmcs"]
+[ext_resource type="Script" uid="uid://b0epx6nr1s0u" path="res://scripts/planet.gd" id="1_h8ms6"]
+[ext_resource type="Texture2D" uid="uid://chf7u631nauj8" path="res://assets/planets/jupiter.svg" id="2_ggt7d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8ms6"]
 radius = 32.0
 
-[sub_resource type="SphereMesh" id="SphereMesh_cktii"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wmcs"]
+radius = 34.0
 
 [node name="planet" type="RigidBody2D"]
 mass = 0.395
+script = ExtResource("1_h8ms6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h8ms6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.536743e-07, 9.536743e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ggt7d")
+
+[node name="Area2D" type="Area2D" parent="." groups=["planet"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_0wmcs")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(1.9073486e-06, 5.722046e-06)
-scale = Vector2(64.07257, 64.00001)
-mesh = SubResource("SphereMesh_cktii")
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

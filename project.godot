@@ -14,10 +14,22 @@ config/name="Space Suika"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.svg"
 
+[autoload]
+
+gameplay_handler="*res://scripts/gameplay_handler.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+planet=""
+
 [physics]
 
 2d/default_gravity=0.0
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.011764706, 0, 0.05490196, 1)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://blckr51tkht4g"]
+
+[ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_1umni"]
+[ext_resource type="Texture2D" uid="uid://btpqcftqv7a4n" path="res://assets/planets/earth.svg" id="2_cwnmv"]
+[ext_resource type="PackedScene" uid="uid://viskjde1k6cw" path="res://scenes/planets/mars.tscn" id="2_pa0cx"]
+
+[node name="earth" instance=ExtResource("1_1umni")]
+scale = Vector2(0.8, 0.8)
+next_planet = ExtResource("2_pa0cx")
+nscale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_cwnmv")
