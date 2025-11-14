@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://uhq803grhu7t"]
+[gd_scene load_steps=7 format=3 uid="uid://uhq803grhu7t"]
 
 [ext_resource type="PackedScene" uid="uid://cvulgyfneosw6" path="res://scenes/planet.tscn" id="1_g7g4h"]
+[ext_resource type="Script" uid="uid://bfx5nire4eyt6" path="res://scripts/test_scene.gd" id="1_j8ivh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8ivh"]
-radius = 257.99225
+radius = 928.5516
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7g4h"]
 radius = 32.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_j8ivh"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_nd71p"]
+
 [node name="test_scene" type="Node2D"]
+script = ExtResource("1_j8ivh")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(576, 288)
@@ -22,8 +26,6 @@ shape = SubResource("CircleShape2D_j8ivh")
 
 [node name="planet" parent="." instance=ExtResource("1_g7g4h")]
 position = Vector2(704, 416)
-mass = 0.28
-gravity_scale = 0.509
 linear_damp_mode = 1
 linear_damp = 1.041
 
@@ -38,3 +40,31 @@ modulate = Color(0.17254902, 1, 1, 1)
 position = Vector2(576, 288)
 scale = Vector2(64.07257, 64.00001)
 mesh = SubResource("SphereMesh_j8ivh")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 576.0
+offset_bottom = 320.0
+pivot_offset = Vector2(32, 32)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Button"]
+z_index = -1
+position = Vector2(32, 32)
+scale = Vector2(64.07258, 64.000015)
+mesh = SubResource("SphereMesh_nd71p")
+
+[node name="Button2" type="Button" parent="Button"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -256.0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+text = "xcgzdfhgsdgdsfgsdfgsdfgsdfgsdgfsdfgsdfg"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="Button/Button2" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button/Button2" to="." method="_on_button_button_up"]
