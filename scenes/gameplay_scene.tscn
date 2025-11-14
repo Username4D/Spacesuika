@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm70xjhjuemxi"]
+[gd_scene load_steps=7 format=3 uid="uid://dm70xjhjuemxi"]
 
 [ext_resource type="Script" uid="uid://bfx5nire4eyt6" path="res://scripts/test_scene.gd" id="1_01stm"]
+[ext_resource type="PackedScene" uid="uid://ca7tfa0go3rjj" path="res://scenes/ui.tscn" id="2_b2a1o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8ivh"]
 radius = 928.5516
@@ -21,6 +22,7 @@ gravity_space_override = 3
 gravity_point = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_j8ivh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -57,6 +59,13 @@ offset_right = 64.0
 offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
 text = "xcgzdfhgsdgdsfgsdfgsdfgsdfgsdgfsdfgsdfg"
+
+[node name="ui" parent="." instance=ExtResource("2_b2a1o")]
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(576, 288)
+closed = true
+antialiased = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

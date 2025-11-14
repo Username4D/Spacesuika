@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Space Suika"
+run/main_scene="uid://dm70xjhjuemxi"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.svg"
 

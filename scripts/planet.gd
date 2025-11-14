@@ -22,6 +22,8 @@ func spawn_new(area):
 		self.get_parent().add_child(new_planet)
 		await get_tree().process_frame
 		self.queue_free()
+		gameplay_handler.score += nscale.x *  10
+		gameplay_handler.pop.emit(nscale.x)
 
 func _ready() -> void:
 	for i in self.get_children():

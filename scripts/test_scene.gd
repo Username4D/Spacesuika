@@ -29,3 +29,6 @@ func _on_button_button_down() -> void:
 	mesh_start = $Button/MeshInstance2D.global_position
 	shoot_start = get_local_mouse_position()
 	
+func _ready() -> void:
+	for i in range(0, 370, 10 ):
+		$Line2D.add_point(Vector2(sin(deg_to_rad(i)), cos(deg_to_rad(i))) * 256 )
