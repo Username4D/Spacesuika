@@ -16,7 +16,7 @@ radius = 32.0
 script = ExtResource("1_j8ivh")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(576, 288)
+position = Vector2(576, 320)
 gravity_space_override = 3
 gravity_point = true
 
@@ -24,6 +24,7 @@ gravity_point = true
 shape = SubResource("CircleShape2D_j8ivh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(576, 288)
@@ -38,9 +39,9 @@ mesh = SubResource("SphereMesh_j8ivh")
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 256.0
-offset_top = 256.0
+offset_top = 288.0
 offset_right = 576.0
-offset_bottom = 320.0
+offset_bottom = 352.0
 pivot_offset = Vector2(32, 32)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Button"]

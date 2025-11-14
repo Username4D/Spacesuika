@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfx5nire4eyt6" path="res://scripts/test_scene.gd" id="1_01stm"]
 [ext_resource type="PackedScene" uid="uid://ca7tfa0go3rjj" path="res://scenes/ui.tscn" id="2_b2a1o"]
+[ext_resource type="Texture2D" uid="uid://bveabwrovpkol" path="res://assets/planets/mercury.svg" id="2_mvhas"]
 [ext_resource type="Texture2D" uid="uid://cck1lkhchwlh7" path="res://assets/planets/venus.svg" id="3_xpbwm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8ivh"]
@@ -9,8 +10,6 @@ radius = 928.5516
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7g4h"]
 radius = 32.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_nd71p"]
 
 [sub_resource type="Environment" id="Environment_b2a1o"]
 background_mode = 3
@@ -28,7 +27,7 @@ glow_map_strength = 0.75
 script = ExtResource("1_01stm")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(576, 288)
+position = Vector2(576, 320)
 gravity_space_override = 3
 gravity_point = true
 
@@ -37,6 +36,7 @@ visible = false
 shape = SubResource("CircleShape2D_j8ivh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(576, 288)
@@ -45,16 +45,16 @@ shape = SubResource("CircleShape2D_g7g4h")
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 256.0
-offset_top = 256.0
+offset_top = 288.0
 offset_right = 576.0
-offset_bottom = 320.0
+offset_bottom = 352.0
 pivot_offset = Vector2(32, 32)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Button"]
+[node name="MeshInstance2D" type="Sprite2D" parent="Button"]
 z_index = -1
 position = Vector2(32, 32)
-scale = Vector2(64.07258, 64.000015)
-mesh = SubResource("SphereMesh_nd71p")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_mvhas")
 
 [node name="Button2" type="Button" parent="Button"]
 self_modulate = Color(1, 1, 1, 0)
@@ -68,7 +68,7 @@ text = "xcgzdfhgsdgdsfgsdfgsdfgsdfgsdgfsdfgsdfg"
 [node name="ui" parent="." instance=ExtResource("2_b2a1o")]
 
 [node name="Line2D" type="Line2D" parent="."]
-position = Vector2(576, 288)
+position = Vector2(576, 320)
 closed = true
 default_color = Color(1, 0.7445036, 1, 0.006)
 antialiased = true
@@ -78,7 +78,7 @@ environment = SubResource("Environment_b2a1o")
 
 [node name="Venus" type="Sprite2D" parent="."]
 self_modulate = Color(2.9083786, 2.087278, 0, 1)
-position = Vector2(576, 288)
+position = Vector2(576, 320)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_xpbwm")
 
