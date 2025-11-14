@@ -26,6 +26,11 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 planet=""
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+theme/default_font_generate_mipmaps=true
+
 [physics]
 
 2d/default_gravity=0.0

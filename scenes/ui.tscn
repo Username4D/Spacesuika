@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca7tfa0go3rjj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xlq6p"]
+font_size = 56
+
+[node name="ui" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 608.0
+text = "1"
+label_settings = SubResource("LabelSettings_xlq6p")
+horizontal_alignment = 1
+vertical_alignment = 1
