@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr3wyn8u0322w"]
+[gd_scene load_steps=2 format=3 uid="uid://dr3wyn8u0322w"]
 
 [ext_resource type="Script" uid="uid://c1rycmgi7p08r" path="res://scripts/button_row.gd" id="1_4qma2"]
-[ext_resource type="PackedScene" uid="uid://dvovrkvk6myik" path="res://scenes/planet_button.tscn" id="1_hg4en"]
-[ext_resource type="Texture2D" uid="uid://btpqcftqv7a4n" path="res://assets/planets/earth.svg" id="3_ex3x7"]
 
 [node name="button_row" type="HBoxContainer"]
 offset_right = 1152.0
@@ -10,54 +8,6 @@ offset_bottom = 128.0
 theme_override_constants/separation = 16
 alignment = 1
 script = ExtResource("1_4qma2")
-
-[node name="PLAY" parent="." instance=ExtResource("1_hg4en")]
-layout_mode = 2
-
-[node name="Sprite2D" type="TextureRect" parent="PLAY"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -64.0
-offset_right = 64.0
-offset_bottom = 128.0
-grow_horizontal = 2
-scale = Vector2(0.49999988, 0.49999997)
-pivot_offset = Vector2(64, 64)
-texture = ExtResource("3_ex3x7")
-
-[node name="MARS" parent="." instance=ExtResource("1_hg4en")]
-layout_mode = 2
-
-[node name="Sprite2D" type="TextureRect" parent="MARS"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -64.0
-offset_right = 64.0
-offset_bottom = 128.0
-grow_horizontal = 2
-scale = Vector2(0.49999988, 0.49999997)
-pivot_offset = Vector2(64, 64)
-texture = ExtResource("3_ex3x7")
-
-[node name="SETTINGS" parent="." instance=ExtResource("1_hg4en")]
-layout_mode = 2
-
-[node name="Sprite2D" type="TextureRect" parent="SETTINGS"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -64.0
-offset_right = 64.0
-offset_bottom = 128.0
-grow_horizontal = 2
-scale = Vector2(0.49999988, 0.49999997)
-pivot_offset = Vector2(64, 64)
-texture = ExtResource("3_ex3x7")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

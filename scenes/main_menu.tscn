@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvdgkn75wwhea"]
+[gd_scene load_steps=11 format=3 uid="uid://dvdgkn75wwhea"]
 
 [ext_resource type="Texture2D" uid="uid://imendvkubcbo" path="res://assets/planets/earth_hires.svg" id="1_bqqt6"]
 [ext_resource type="Script" uid="uid://cnyngagr7duun" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="PackedScene" uid="uid://dr3wyn8u0322w" path="res://scenes/button_row.tscn" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://dof6acrbngwyb" path="res://assets/star.svg" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://dvovrkvk6myik" path="res://scenes/planet_button.tscn" id="4_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://bveabwrovpkol" path="res://assets/planets/mercury.svg" id="5_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://cck1lkhchwlh7" path="res://assets/planets/venus.svg" id="6_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://danqe0oqda5ml" path="res://assets/planets/neptune.svg" id="7_jk1qb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
 font_size = 111
@@ -35,15 +39,15 @@ glow_map_strength = 0.75
 script = ExtResource("1_wu84c")
 
 [node name="Earth" type="Sprite2D" parent="."]
-position = Vector2(576, 192)
+position = Vector2(576, 224)
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("1_bqqt6")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 160.0
-offset_top = 32.0
+offset_top = 64.0
 offset_right = 992.0
-offset_bottom = 352.0
+offset_bottom = 384.0
 text = "SPACE
 SUIKA"
 label_settings = SubResource("LabelSettings_ekxnf")
@@ -53,6 +57,55 @@ vertical_alignment = 1
 [node name="button_row" parent="." instance=ExtResource("2_ekxnf")]
 offset_top = 416.0
 offset_bottom = 544.0
+
+[node name="SETTINGS" parent="button_row" instance=ExtResource("4_rtw2f")]
+layout_mode = 2
+
+[node name="Sprite2D" type="TextureRect" parent="button_row/SETTINGS"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(0.49999988, 0.49999997)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("5_tbmy8")
+
+[node name="PLAY" parent="button_row" instance=ExtResource("4_rtw2f")]
+layout_mode = 2
+
+[node name="Sprite2D" type="TextureRect" parent="button_row/PLAY"]
+self_modulate = Color(2.9083786, 2.087278, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(0.49999988, 0.49999997)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("6_tbmy8")
+
+[node name="MAPS" parent="button_row" instance=ExtResource("4_rtw2f")]
+layout_mode = 2
+
+[node name="Sprite2D" type="TextureRect" parent="button_row/MAPS"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(0.49999988, 0.49999997)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("7_jk1qb")
 
 [node name="stars" type="Node2D" parent="."]
 
@@ -83,5 +136,10 @@ texture = ExtResource("3_bqqt6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wu84c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
 
 [connection signal="pressed" from="button_row" to="." method="_on_button_row_pressed"]
