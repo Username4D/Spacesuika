@@ -1,0 +1,132 @@
+[gd_scene load_steps=4 format=3 uid="uid://f3og2v8tkdw6"]
+
+[ext_resource type="PackedScene" uid="uid://dnrrpjepmv5rw" path="res://scenes/page.tscn" id="1_sb6nk"]
+[ext_resource type="PackedScene" uid="uid://bnc833c43mmys" path="res://scenes/achievement_panel.tscn" id="2_xs4is"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mwig7"]
+font_size = 42
+
+[node name="achievements_page" instance=ExtResource("1_sb6nk")]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." index="1"]
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 1088.0
+offset_bottom = 608.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="The first ten!" parent="ScrollContainer/VBoxContainer" index="0" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "10_points"
+requirement = 10
+
+[node name="FREE POINTS" parent="ScrollContainer/VBoxContainer" index="1" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "100_points"
+requirement = 100
+
+[node name="Big boi points" parent="ScrollContainer/VBoxContainer" index="2" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "1000_points"
+requirement = 1000
+
+[node name="Panel" parent="ScrollContainer/VBoxContainer" index="3" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "10000_points"
+requirement = 10000
+
+[node name="Panel5" parent="ScrollContainer/VBoxContainer" index="4" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "100000_points"
+requirement = 100000
+
+[node name="The first ten!2" parent="ScrollContainer/VBoxContainer" index="5" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "10_merges"
+requirement = 10
+tracking = "merges"
+
+[node name="FREE POINTS2" parent="ScrollContainer/VBoxContainer" index="6" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "100_merges"
+requirement = 100
+tracking = "merges"
+
+[node name="Big boi points2" parent="ScrollContainer/VBoxContainer" index="7" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "1000_merges"
+requirement = 1000
+tracking = "merges"
+
+[node name="Panel2" parent="ScrollContainer/VBoxContainer" index="8" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "10000_merges"
+requirement = 10000
+tracking = "merges"
+
+[node name="Panel6" parent="ScrollContainer/VBoxContainer" index="9" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "100000_merges"
+requirement = 100000
+tracking = "merges"
+
+[node name="Panel7" parent="ScrollContainer/VBoxContainer" index="10" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "1_neptun"
+tracking = "neptuns"
+
+[node name="Panel8" parent="ScrollContainer/VBoxContainer" index="11" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "10_neptun"
+requirement = 10
+tracking = "neptuns"
+
+[node name="Panel9" parent="ScrollContainer/VBoxContainer" index="12" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "100_neptun"
+requirement = 100
+tracking = "neptuns"
+
+[node name="Panel10" parent="ScrollContainer/VBoxContainer" index="13" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "opened_settings"
+tracking = "none"
+
+[node name="Panel11" parent="ScrollContainer/VBoxContainer" index="14" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "opened_maps"
+tracking = "none"
+
+[node name="Panel12" parent="ScrollContainer/VBoxContainer" index="15" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "opened_achievements"
+tracking = "none"
+
+[node name="Panel13" parent="ScrollContainer/VBoxContainer" index="16" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "opened_game"
+tracking = "none"
+
+[node name="Panel14" parent="ScrollContainer/VBoxContainer" index="17" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "opened_credits"
+tracking = "none"
+
+[node name="Panel15" parent="ScrollContainer/VBoxContainer" index="18" instance=ExtResource("2_xs4is")]
+layout_mode = 2
+achievement = "first_death"
+tracking = "none"
+
+[node name="Label" type="Label" parent="." index="2"]
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 1056.0
+offset_bottom = 192.0
+text = "Achievements"
+label_settings = SubResource("LabelSettings_mwig7")
+vertical_alignment = 1

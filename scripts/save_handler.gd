@@ -1,6 +1,6 @@
 extends Node
 
-var points_collected = 0
+var points_collected = 100
 var merges = 0
 var neptuns = 0
 

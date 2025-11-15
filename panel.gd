@@ -1,4 +1,8 @@
-extends Node2D
+extends Panel
+
+@export var achievement = ""
+@export var requirement = 1
+@export var tracking = "points"
 
 var achievements = {"10_points":{"name": "The first ten!", "desc": "Your first ten collected points"},
 "100_points":{"name": "FREE POINTS", "desc": "Collected 100 points"},
@@ -21,23 +25,21 @@ var achievements = {"10_points":{"name": "The first ten!", "desc": "Your first t
 "first_death":{"name": "Ive come so far...", "desc": "Your first death"}
 }
 
-func push(x):
-	print(x)
-	$CanvasLayer/desc.text = achievements[x]["desc"]
-	$CanvasLayer/name.text = achievements[x]["name"]
-	$time.wait_time = 1
-	$time.start()
-	while $time.time_left != 0:
-		await get_tree().process_frame
-		$CanvasLayer.offset.x = -384 + 384 * ease($time.time_left, 0.5)
-	$time.wait_time =2
-	$time.start()
-	await $time.timeout
-	$time.wait_time = 1
-	$time.start()
-	while $time.time_left != 0:
-		await get_tree().process_frame
-		$CanvasLayer.offset.x = 0- 384 * ease($time.time_left, 0.5)
-
 func _ready() -> void:
-	save_handler.achievements.connect(push)
+	$ProgressBar.max_value = requirement
+	$name.text = achievements[achievement]["name"]
+	$desc.text = achievements[achievement]["desc"]
+	
+	
+	match tracking:
+		"points":
+			$ProgressBar.value = save_handler.points_collected
+		"merges":
+			$ProgressBar.value = save_handler.merges
+		"neptuns":
+			$ProgressBar.value = save_handler.neptuns
+		"none":
+			$ProgressBar.value = 1 if save_handler.collected_achievements[achievement] else 0
+	$requirement.text = var_to_str(int($ProgressBar.value)) + "/" + var_to_str(requirement)
+	if $ProgressBar.value >= requirement:
+		self.modulate = Color(1.75,1.75,1.75,1)
