@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvdgkn75wwhea"]
+
+[ext_resource type="Texture2D" uid="uid://imendvkubcbo" path="res://assets/planets/earth_hires.svg" id="1_bqqt6"]
+[ext_resource type="Script" uid="uid://cnyngagr7duun" path="res://scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="PackedScene" uid="uid://dr3wyn8u0322w" path="res://scenes/button_row.tscn" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://dof6acrbngwyb" path="res://assets/star.svg" id="3_bqqt6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
+font_size = 111
+stacked_outline_count = 5
+stacked_outline_0/size = 2
+stacked_outline_0/color = Color(0, 0, 0, 0.072000004)
+stacked_outline_1/size = 4
+stacked_outline_1/color = Color(0, 0, 0, 0.072000004)
+stacked_outline_2/size = 8
+stacked_outline_2/color = Color(0, 0, 0, 0.072000004)
+stacked_outline_3/size = 10
+stacked_outline_3/color = Color(0, 0, 0, 0.072000004)
+stacked_outline_4/size = 12
+stacked_outline_4/color = Color(0, 0, 0, 0.072000004)
+
+[sub_resource type="Environment" id="Environment_wu84c"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 8.0
+glow_strength = 0.23
+glow_bloom = 0.33
+glow_blend_mode = 1
+glow_hdr_threshold = 0.8
+glow_hdr_scale = 0.0
+glow_hdr_luminance_cap = 0.1
+glow_map_strength = 0.75
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_wu84c")
+
+[node name="Earth" type="Sprite2D" parent="."]
+position = Vector2(576, 192)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("1_bqqt6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 32.0
+offset_right = 992.0
+offset_bottom = 352.0
+text = "SPACE
+SUIKA"
+label_settings = SubResource("LabelSettings_ekxnf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_row" parent="." instance=ExtResource("2_ekxnf")]
+offset_top = 416.0
+offset_bottom = 544.0
+
+[node name="stars" type="Node2D" parent="."]
+
+[node name="Star" type="Sprite2D" parent="stars"]
+position = Vector2(128, 512)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bqqt6")
+
+[node name="Star2" type="Sprite2D" parent="stars"]
+position = Vector2(256, 544)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_bqqt6")
+
+[node name="Star3" type="Sprite2D" parent="stars"]
+position = Vector2(928, 480)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_bqqt6")
+
+[node name="Star4" type="Sprite2D" parent="stars"]
+position = Vector2(960, 96)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_bqqt6")
+
+[node name="Star5" type="Sprite2D" parent="stars"]
+position = Vector2(192, 64)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_bqqt6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wu84c")
+
+[connection signal="pressed" from="button_row" to="." method="_on_button_row_pressed"]
