@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca7tfa0go3rjj"]
+[gd_scene load_steps=4 format=3 uid="uid://ca7tfa0go3rjj"]
 
 [ext_resource type="Script" uid="uid://cqaahe76pa3bf" path="res://scripts/ui.gd" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://dof6acrbngwyb" path="res://assets/star.svg" id="2_x4jx1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xlq6p"]
 font_size = 56
@@ -18,3 +19,30 @@ text = "1"
 label_settings = SubResource("LabelSettings_xlq6p")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="stars" type="Node2D" parent="."]
+
+[node name="Star" type="Sprite2D" parent="stars"]
+position = Vector2(128, 512)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_x4jx1")
+
+[node name="Star2" type="Sprite2D" parent="stars"]
+position = Vector2(256, 544)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_x4jx1")
+
+[node name="Star3" type="Sprite2D" parent="stars"]
+position = Vector2(928, 480)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_x4jx1")
+
+[node name="Star4" type="Sprite2D" parent="stars"]
+position = Vector2(960, 96)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_x4jx1")
+
+[node name="Star5" type="Sprite2D" parent="stars"]
+position = Vector2(192, 64)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_x4jx1")

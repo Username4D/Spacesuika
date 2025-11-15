@@ -38,9 +38,9 @@ func _on_button_button_up() -> void:
 		var ran = randi_range(0, 12)
 		if ran <= 5:
 			next_planet = 0
-		elif ran <= 9:
+		elif ran <=8:
 			next_planet = 1
-		elif next_planet <= 10:
+		elif next_planet <= 9:
 			next_planet = 2
 		else:
 			next_planet = 3
@@ -54,4 +54,4 @@ func _on_button_button_down() -> void:
 	
 func _ready() -> void:
 	for i in range(0, 370, 10 ):
-		$Line2D.add_point(Vector2(sin(deg_to_rad(i)), cos(deg_to_rad(i))) * 256 )
+		$Line2D.add_point(Vector2(sin(deg_to_rad(i)), cos(deg_to_rad(i))) * (256 - 48))

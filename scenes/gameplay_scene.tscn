@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm70xjhjuemxi"]
+[gd_scene load_steps=9 format=3 uid="uid://dm70xjhjuemxi"]
 
 [ext_resource type="Script" uid="uid://bfx5nire4eyt6" path="res://scripts/test_scene.gd" id="1_01stm"]
 [ext_resource type="PackedScene" uid="uid://ca7tfa0go3rjj" path="res://scenes/ui.tscn" id="2_b2a1o"]
 [ext_resource type="Texture2D" uid="uid://bveabwrovpkol" path="res://assets/planets/mercury.svg" id="2_mvhas"]
 [ext_resource type="Texture2D" uid="uid://cck1lkhchwlh7" path="res://assets/planets/venus.svg" id="3_xpbwm"]
+[ext_resource type="PackedScene" uid="uid://brtp2aoqh6f46" path="res://scenes/planets/neptun.tscn" id="5_27dq3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8ivh"]
 radius = 928.5516
@@ -81,6 +82,9 @@ self_modulate = Color(2.9083786, 2.087278, 0, 1)
 position = Vector2(576, 320)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_xpbwm")
+
+[node name="neptun" parent="." instance=ExtResource("5_27dq3")]
+position = Vector2(736, 288)
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://danqe0oqda5ml" path="res://assets/planets/neptune.svg" id="2_s08ni"]
 
 [node name="neptun" instance=ExtResource("1_ft6j4")]
-scale = Vector2(2.5, 2.5)
-nscale = Vector2(2.5, 2.5)
+scale = Vector2(2.4, 2.4)
+nscale = Vector2(2.4, 2.4)
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_s08ni")
+
+[connection signal="timeout" from="Area2D/death_timer" to="." method="_on_death_timer_timeout"]
