@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 	else:
 		shoot_distance = get_global_mouse_position() - shoot_start
 		$Button/MeshInstance2D.global_position = mesh_start + (shoot_distance / 2)
-		print(shoot_distance)
 	
 	$Button/MeshInstance2D.scale = $Button/MeshInstance2D.scale.move_toward(planet_scales[next_planet] * 0.5, 1 * delta)
 func _on_button_button_up() -> void:
@@ -34,7 +33,6 @@ func _on_button_button_up() -> void:
 		new_shot.scale = new_shot.nscale
 		self.add_child(new_shot)
 		new_shot.apply_impulse(shoot_distance * -1)
-		print(shoot_distance)
 		var ran = randi_range(0, 12)
 		if ran <= 5:
 			next_planet = 0

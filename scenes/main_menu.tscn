@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvdgkn75wwhea"]
+[gd_scene load_steps=13 format=3 uid="uid://dvdgkn75wwhea"]
 
 [ext_resource type="Texture2D" uid="uid://imendvkubcbo" path="res://assets/planets/earth_hires.svg" id="1_bqqt6"]
 [ext_resource type="Script" uid="uid://cnyngagr7duun" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bveabwrovpkol" path="res://assets/planets/mercury.svg" id="5_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cck1lkhchwlh7" path="res://assets/planets/venus.svg" id="6_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://danqe0oqda5ml" path="res://assets/planets/neptune.svg" id="7_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://chf7u631nauj8" path="res://assets/planets/jupiter.svg" id="8_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://5a7o4bnw82a1" path="res://assets/planets/mars.svg" id="9_lgwnu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
 font_size = 111
@@ -74,6 +76,22 @@ scale = Vector2(0.49999988, 0.49999997)
 pivot_offset = Vector2(64, 64)
 texture = ExtResource("5_tbmy8")
 
+[node name="MAPS" parent="button_row" instance=ExtResource("4_rtw2f")]
+layout_mode = 2
+
+[node name="Sprite2D" type="TextureRect" parent="button_row/MAPS"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(0.49999988, 0.49999997)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("7_jk1qb")
+
 [node name="PLAY" parent="button_row" instance=ExtResource("4_rtw2f")]
 layout_mode = 2
 
@@ -91,10 +109,10 @@ scale = Vector2(0.49999988, 0.49999997)
 pivot_offset = Vector2(64, 64)
 texture = ExtResource("6_tbmy8")
 
-[node name="MAPS" parent="button_row" instance=ExtResource("4_rtw2f")]
+[node name="ACHIEVEMENTS" parent="button_row" instance=ExtResource("4_rtw2f")]
 layout_mode = 2
 
-[node name="Sprite2D" type="TextureRect" parent="button_row/MAPS"]
+[node name="Sprite2D" type="TextureRect" parent="button_row/ACHIEVEMENTS"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -105,7 +123,23 @@ offset_bottom = 128.0
 grow_horizontal = 2
 scale = Vector2(0.49999988, 0.49999997)
 pivot_offset = Vector2(64, 64)
-texture = ExtResource("7_jk1qb")
+texture = ExtResource("8_5dd4i")
+
+[node name="CREDITS" parent="button_row" instance=ExtResource("4_rtw2f")]
+layout_mode = 2
+
+[node name="Sprite2D" type="TextureRect" parent="button_row/CREDITS"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(0.49999988, 0.49999997)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("9_lgwnu")
 
 [node name="stars" type="Node2D" parent="."]
 

@@ -9,7 +9,7 @@ func _ready() -> void:
 		i.get_node("Label").text = i.name
 
 func _process(delta: float) -> void:
-	hovered = floor((get_local_mouse_position().x + 128 - self.size.x / 2 ) / 256)
+	hovered = floor((get_local_mouse_position().x + 96 - self.size.x / 2 ) / 192)
 	if abs(hovered) <= floor(self.get_child_count() / 2) and active:
 		for i in self.get_children():
 			if i.get_index() != hovered + floor(self.get_child_count() / 2):

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Space Suika"
-run/main_scene="uid://dvdgkn75wwhea"
+run/main_scene="uid://bl0fv18dx7wev"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.svg"
 
 [autoload]
 
 gameplay_handler="*res://scripts/gameplay_handler.gd"
+save_handler="*res://scripts/save_handler.gd"
 
 [display]
 

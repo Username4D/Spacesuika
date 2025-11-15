@@ -23,6 +23,9 @@ func spawn_new(area):
 		await get_tree().process_frame
 		self.queue_free()
 		gameplay_handler.score += nscale.x *  10
+		save_handler.points_collected += nscale.x *  10
+		save_handler.merges += 1
+		save_handler.check()
 		gameplay_handler.pop.emit(nscale.x)
 
 func _ready() -> void:
@@ -32,15 +35,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if self.get_parent().get_node("Area2D"):
-		if not next_planet:
-			print(256 - 64 - nscale.x * 32, )
-			print( self.position.distance_to(self.get_parent().get_node("Area2D").position))
+
 		if self.position.distance_to(self.get_parent().get_node("Area2D").position) > 256 - 48 - nscale.x * 32:
 			if $Area2D/death_timer.is_stopped(): 
 				$Area2D/death_timer.start()
 			self.modulate.g = 1 - (3 - $Area2D/death_timer.time_left) / 5
 			self.modulate.b = 1 - (3 - $Area2D/death_timer.time_left) / 5
-			print("lol")
 		else: 
 			$Area2D/death_timer.stop()
 			self.modulate.g = move_toward(self.modulate.g, 1, 2 * delta)

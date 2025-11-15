@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct0u2efapwh67"]
+
+[ext_resource type="Script" uid="uid://2a5jdy7hpdlp" path="res://scripts/achievements.gd" id="1_5e7lm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2q86a"]
+font_size = 11
+font_color = Color(1, 0.92850393, 1, 0.326)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jqgop"]
+font_size = 11
+font_color = Color(1, 0.92850393, 1, 0.326)
+
+[node name="achievements" type="Node2D"]
+script = ExtResource("1_5e7lm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1184.0
+offset_top = 448.0
+offset_right = 1504.0
+offset_bottom = 608.0
+color = Color(0.1680183, 0, 0.17184411, 0.287)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1192.0
+offset_top = 448.0
+offset_right = 1480.0
+offset_bottom = 480.0
+text = " Achievement unlocked: "
+label_settings = SubResource("LabelSettings_2q86a")
+vertical_alignment = 1
+
+[node name="name" type="Label" parent="CanvasLayer"]
+offset_left = 1192.0
+offset_top = 480.0
+offset_right = 1480.0
+offset_bottom = 512.0
+text = " Achievement unlocked: "
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="CanvasLayer"]
+offset_left = 1192.0
+offset_top = 512.0
+offset_right = 1480.0
+offset_bottom = 544.0
+text = " Achievement unlocked: "
+label_settings = SubResource("LabelSettings_jqgop")
+vertical_alignment = 1
+
+[node name="time" type="Timer" parent="."]
+one_shot = true
