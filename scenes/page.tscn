@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnrrpjepmv5rw"]
+
+[ext_resource type="Script" uid="uid://cxmmiggcroigc" path="res://scripts/back_button.gd" id="1_kkqxg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iua4j"]
+bg_color = Color(1, 0.6350498, 1, 0)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yawvn"]
+bg_color = Color(1, 0.6350498, 1, 0.006)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vmec"]
+bg_color = Color(1, 0.6350498, 1, 0.004)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndcpa"]
+bg_color = Color(1, 0.6350498, 1, 0)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="page" type="Node2D"]
+
+[node name="back" type="Button" parent="."]
+custom_minimum_size = Vector2(128, 64)
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 96.0
+pivot_offset = Vector2(64, 32)
+theme_override_styles/normal = SubResource("StyleBoxFlat_iua4j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yawvn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0vmec")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ndcpa")
+text = "        Back"
+alignment = 0
+script = ExtResource("1_kkqxg")
+
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
