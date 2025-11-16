@@ -1,14 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl0fv18dx7wev"]
+[gd_scene load_steps=3 format=3 uid="uid://bl0fv18dx7wev"]
 
 [ext_resource type="PackedScene" uid="uid://dvdgkn75wwhea" path="res://scenes/main_menu.tscn" id="1_dbgjr"]
 [ext_resource type="PackedScene" uid="uid://ct0u2efapwh67" path="res://scenes/achievements.tscn" id="2_y8ve3"]
-[ext_resource type="PackedScene" uid="uid://b1yovic2hyjwg" path="res://scenes/settings.tscn" id="3_vpwe7"]
 
 [node name="view" type="Node2D"]
 
 [node name="main_menu" parent="." instance=ExtResource("1_dbgjr")]
 
 [node name="achievements" parent="." instance=ExtResource("2_y8ve3")]
-
-[node name="settings" parent="." instance=ExtResource("3_vpwe7")]
-position = Vector2(576, 648)
