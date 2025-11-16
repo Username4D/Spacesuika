@@ -27,6 +27,7 @@ func spawn_new(area):
 		save_handler.merges += 1
 		save_handler.check()
 		gameplay_handler.pop.emit(nscale.x)
+		save_handler.save_save()
 
 func _ready() -> void:
 	for i in self.get_children():

@@ -1,6 +1,6 @@
 extends Node
 
-var points_collected = 100
+var points_collected = 0
 var merges = 0
 var neptuns = 0
 
@@ -63,3 +63,18 @@ func check():
 		achievements.emit("10_merges")
 	
 	print(points_collected, merges)
+
+func load_save():
+	var file = FileAccess.open("user://savefile.dat", FileAccess.READ)
+	if file != null:
+		var content = file.get_var()
+		points_collected = content["points_collected"]
+		merges = content["merges"]
+		neptuns = content["neptuns"]
+		settings = content["settings"]
+		collected_achievements = content["collected_achievements"]
+		
+func save_save():
+	var content = {"points_collected": points_collected, "merges": merges, "neptuns": neptuns, "settings": settings, "collected_achievements": collected_achievements}
+	var file = FileAccess.open("user://savefile.dat", FileAccess.WRITE)
+	file.store_var(content)

@@ -1,10 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl0fv18dx7wev"]
+[gd_scene load_steps=5 format=3 uid="uid://bl0fv18dx7wev"]
 
 [ext_resource type="PackedScene" uid="uid://dvdgkn75wwhea" path="res://scenes/main_menu.tscn" id="1_dbgjr"]
+[ext_resource type="Script" uid="uid://dvg4535pjo37" path="res://scripts/view.gd" id="1_vpwe7"]
 [ext_resource type="PackedScene" uid="uid://ct0u2efapwh67" path="res://scenes/achievements.tscn" id="2_y8ve3"]
 
+[sub_resource type="Environment" id="Environment_y8ve3"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 8.0
+glow_strength = 0.23
+glow_bloom = 0.33
+glow_blend_mode = 1
+glow_hdr_threshold = 0.8
+glow_hdr_scale = 0.0
+glow_hdr_luminance_cap = 0.1
+glow_map_strength = 0.75
+
 [node name="view" type="Node2D"]
+script = ExtResource("1_vpwe7")
 
 [node name="main_menu" parent="." instance=ExtResource("1_dbgjr")]
 
 [node name="achievements" parent="." instance=ExtResource("2_y8ve3")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y8ve3")

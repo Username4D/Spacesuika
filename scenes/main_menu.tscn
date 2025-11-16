@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvdgkn75wwhea"]
+[gd_scene load_steps=12 format=3 uid="uid://dvdgkn75wwhea"]
 
 [ext_resource type="Texture2D" uid="uid://imendvkubcbo" path="res://assets/planets/earth_hires.svg" id="1_bqqt6"]
 [ext_resource type="Script" uid="uid://cnyngagr7duun" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -24,18 +24,6 @@ stacked_outline_3/size = 10
 stacked_outline_3/color = Color(0, 0, 0, 0.072000004)
 stacked_outline_4/size = 12
 stacked_outline_4/color = Color(0, 0, 0, 0.072000004)
-
-[sub_resource type="Environment" id="Environment_wu84c"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 8.0
-glow_strength = 0.23
-glow_bloom = 0.33
-glow_blend_mode = 1
-glow_hdr_threshold = 0.8
-glow_hdr_scale = 0.0
-glow_hdr_luminance_cap = 0.1
-glow_map_strength = 0.75
 
 [node name="main_menu" type="Node2D"]
 script = ExtResource("1_wu84c")
@@ -167,9 +155,6 @@ texture = ExtResource("3_bqqt6")
 position = Vector2(192, 64)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_bqqt6")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_wu84c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)

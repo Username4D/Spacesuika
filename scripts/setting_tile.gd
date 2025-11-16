@@ -25,8 +25,10 @@ func _process(delta: float) -> void:
 func _on_check_box_pressed() -> void:
 	if not slider:
 		save_handler.settings[setting] = $CheckBox.button_pressed
+	save_handler.save_save()
 
 
 func _on_h_slider_drag_ended(value_changed: bool) -> void:
 	if slider:
 		save_handler.settings[setting] = $HSlider.value
+	save_handler.save_save()
