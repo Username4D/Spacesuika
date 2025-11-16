@@ -6,6 +6,8 @@ var neptuns = 0
 
 signal achievements(achievement)
 
+var settings = {"vsync": false, "max_fps": 60, "capped_fps": false, "glow": true, "animations": true, "sfx_volume": 10, "music_volume": 10}
+
 var collected_achievements = {
  "10_points": false,
  "100_points": false,

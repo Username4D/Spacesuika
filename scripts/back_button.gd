@@ -15,4 +15,5 @@ func disable_scrollbars() -> void:
 	self.get_parent().get_node("ScrollContainer").get_h_scroll_bar().theme = invisible_scrollbar_theme
 
 func _ready() -> void:
-	disable_scrollbars()
+	if self.get_parent().get_node("ScrollContainer"):
+		disable_scrollbars()

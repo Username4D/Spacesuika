@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm70xjhjuemxi"]
+[gd_scene load_steps=13 format=3 uid="uid://dm70xjhjuemxi"]
 
 [ext_resource type="Script" uid="uid://bfx5nire4eyt6" path="res://scripts/test_scene.gd" id="1_01stm"]
 [ext_resource type="PackedScene" uid="uid://ca7tfa0go3rjj" path="res://scenes/ui.tscn" id="2_b2a1o"]
 [ext_resource type="Texture2D" uid="uid://bveabwrovpkol" path="res://assets/planets/mercury.svg" id="2_mvhas"]
 [ext_resource type="Texture2D" uid="uid://cck1lkhchwlh7" path="res://assets/planets/venus.svg" id="3_xpbwm"]
+[ext_resource type="Script" uid="uid://cxmmiggcroigc" path="res://scripts/back_button.gd" id="5_27dq3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8ivh"]
 radius = 928.5516
@@ -22,6 +23,34 @@ glow_hdr_threshold = 0.8
 glow_hdr_scale = 0.0
 glow_hdr_luminance_cap = 0.1
 glow_map_strength = 0.75
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1126i"]
+bg_color = Color(1, 0.6350498, 1, 0)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd025"]
+bg_color = Color(1, 0.6350498, 1, 0.006)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtnmq"]
+bg_color = Color(1, 0.6350498, 1, 0.004)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyhvn"]
+bg_color = Color(1, 0.6350498, 1, 0)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [node name="gameplay_scene" type="Node2D"]
 script = ExtResource("1_01stm")
@@ -82,7 +111,23 @@ antialiased = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b2a1o")
 
+[node name="back" type="Button" parent="."]
+custom_minimum_size = Vector2(128, 64)
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 96.0
+pivot_offset = Vector2(64, 32)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1126i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cd025")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gtnmq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_uyhvn")
+text = "        Back"
+alignment = 0
+script = ExtResource("5_27dq3")
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_down" from="Button/Button2" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button/Button2" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]

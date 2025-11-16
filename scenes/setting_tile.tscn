@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bngev7ebaglxs"]
+
+[ext_resource type="Script" uid="uid://duueepgel6d1p" path="res://scripts/setting_tile.gd" id="1_fk4wa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdk8n"]
+font_size = 18
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdk8n"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -384.0
+offset_bottom = -584.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fk4wa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+text = "SETTING_NAME"
+label_settings = SubResource("LabelSettings_hdk8n")
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="."]
+self_modulate = Color(3.8653786, 3.8653786, 3.8653786, 1)
+layout_mode = 0
+offset_left = 640.0
+offset_top = 20.0
+offset_right = 668.0
+offset_bottom = 44.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdk8n")
+
+[node name="HSlider" type="HSlider" parent="."]
+self_modulate = Color(3.8653786, 3.8653786, 3.8653786, 1)
+layout_mode = 0
+offset_left = 644.0
+offset_right = 964.0
+offset_bottom = 64.0
+max_value = 10.0
+
+[node name="selected" type="Label" parent="."]
+layout_mode = 0
+offset_left = 996.0
+offset_right = 1092.0
+offset_bottom = 64.0
+text = "78"
+vertical_alignment = 1
+
+[connection signal="pressed" from="CheckBox" to="." method="_on_check_box_pressed"]
+[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
