@@ -92,36 +92,6 @@ achievement = "100_neptun"
 requirement = 100
 tracking = "neptuns"
 
-[node name="Panel10" parent="ScrollContainer/VBoxContainer" index="13" instance=ExtResource("2_xs4is")]
-layout_mode = 2
-achievement = "opened_settings"
-tracking = "none"
-
-[node name="Panel11" parent="ScrollContainer/VBoxContainer" index="14" instance=ExtResource("2_xs4is")]
-layout_mode = 2
-achievement = "opened_maps"
-tracking = "none"
-
-[node name="Panel12" parent="ScrollContainer/VBoxContainer" index="15" instance=ExtResource("2_xs4is")]
-layout_mode = 2
-achievement = "opened_achievements"
-tracking = "none"
-
-[node name="Panel13" parent="ScrollContainer/VBoxContainer" index="16" instance=ExtResource("2_xs4is")]
-layout_mode = 2
-achievement = "opened_game"
-tracking = "none"
-
-[node name="Panel14" parent="ScrollContainer/VBoxContainer" index="17" instance=ExtResource("2_xs4is")]
-layout_mode = 2
-achievement = "opened_credits"
-tracking = "none"
-
-[node name="Panel15" parent="ScrollContainer/VBoxContainer" index="18" instance=ExtResource("2_xs4is")]
-layout_mode = 2
-achievement = "first_death"
-tracking = "none"
-
 [node name="Label" type="Label" parent="." index="2"]
 offset_left = 64.0
 offset_top = 96.0
