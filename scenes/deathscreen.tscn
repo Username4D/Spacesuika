@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck6dqq4kqpif5"]
+
+[ext_resource type="Script" uid="uid://b5bcylhq22nma" path="res://scripts/deathscreen.gd" id="1_eye5d"]
+[ext_resource type="PackedScene" uid="uid://dvovrkvk6myik" path="res://scenes/planet_button.tscn" id="1_uurjc"]
+[ext_resource type="Texture2D" uid="uid://cck1lkhchwlh7" path="res://assets/planets/venus.svg" id="2_eye5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yawvn"]
+bg_color = Color(1, 0.6350498, 1, 0.006)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_hgqth"]
+font_size = 78
+
+[sub_resource type="LabelSettings" id="LabelSettings_uurjc"]
+font_size = 24
+
+[node name="ColorRect" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 672.0
+script = ExtResource("1_eye5d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 3
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 672.0
+color = Color(1, 1, 1, 0)
+
+[node name="Control" type="Control" parent="."]
+z_index = 9
+anchors_preset = 0
+offset_left = 256.0
+offset_top = 96.0
+offset_right = 896.0
+offset_bottom = 544.0
+
+[node name="Panel" type="Panel" parent="Control"]
+z_index = -1
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 448.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yawvn")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 640.0
+offset_bottom = 160.0
+text = "GAME OVER!"
+label_settings = SubResource("LabelSettings_hgqth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BACK TO MENU" parent="Control" instance=ExtResource("1_uurjc")]
+z_index = 11
+layout_mode = 0
+offset_left = 256.0
+offset_top = 288.0
+offset_right = 384.0
+offset_bottom = 416.0
+
+[node name="Sprite2D" type="TextureRect" parent="Control/BACK TO MENU"]
+self_modulate = Color(2.9083786, 2.087278, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(0.49999988, 0.49999997)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("2_eye5d")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 160.0
+offset_right = 640.0
+offset_bottom = 256.0
+text = "Score: 12020 Points"
+label_settings = SubResource("LabelSettings_uurjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="Control/BACK TO MENU" to="." method="_on_back_to_menu_pressed"]

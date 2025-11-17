@@ -8,10 +8,9 @@ var planet_textures = [preload("res://assets/planets/mercury.svg"), preload("res
 var planet_scales = [Vector2(0.4,0.4),Vector2(0.6,0.6),Vector2(0.8,0.8),Vector2(1.1,1.1)]
 
 var planets = [preload("res://scenes/planets/mercury.tscn"), preload("res://scenes/planets/venus.tscn"), preload("res://scenes/planets/earth.tscn"), preload("res://scenes/planets/mars.tscn")]
-
 var next_planet = 0
 
-
+signal death_singal
 
 func _process(delta: float) -> void:
 	if not $Button.button_pressed and not $Button/Button2.button_pressed:
@@ -53,3 +52,20 @@ func _on_button_button_down() -> void:
 func _ready() -> void:
 	for i in range(0, 370, 10 ):
 		$Line2D.add_point(Vector2(sin(deg_to_rad(i)), cos(deg_to_rad(i))) * (256 - 48))
+
+func death():
+	death_singal.emit()
+	var deathscreen = load("res://scenes/deathscreen.tscn").instantiate()
+	deathscreen.score = gameplay_handler.score
+	deathscreen.position = self.position
+	self.get_parent().add_child(deathscreen)
+
+func exit():
+	gameplay_handler.score = 0
+	self.get_parent().get_node("main_menu").play = false
+	self.name = "wooo"
+	var timer = get_tree().create_timer(1)
+	while timer:
+		await get_tree().process_frame
+		self.position.y -= 2
+	self.queue_free()

@@ -1,7 +1,7 @@
 extends Node2D
 
 var settings = false
-var play = false
+@export var play = false
 var achievements = false
 
 func _on_button_row_pressed(button: Variant) -> void:

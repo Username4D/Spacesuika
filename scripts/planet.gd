@@ -9,8 +9,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if area.get_parent().index > self.index:
 			area.get_parent().spawn_new(area)
 			self.queue_free()
-	else:
-		print(area.name)
 
 func spawn_new(area):
 	if next_planet:
@@ -32,7 +30,8 @@ func spawn_new(area):
 func _ready() -> void:
 	for i in self.get_children():
 		i.scale = nscale if i.name != "Sprite2D" else nscale * 0.5
-
+	#print(self.get_parent().get_signal_list())
+	self.get_parent().death_singal.connect(die)
 
 func _process(delta: float) -> void:
 	if self.get_parent().get_node("Area2D"):
@@ -48,7 +47,16 @@ func _process(delta: float) -> void:
 			self.modulate.b = move_toward(self.modulate.g, 1, 2 * delta)
 	
 
-
+func die():
+	print("WOOOOOOO DEATH")
+	$Sprite2D/scale_timer.start()
+	while $Sprite2D/scale_timer.time_left != 0:
+		await get_tree().process_frame
+		$Sprite2D.scale = Vector2($Sprite2D/scale_timer.time_left,$Sprite2D/scale_timer.time_left)
+	$Sprite2D.visible = false
+	self.queue_free()
+	
 
 func _on_death_timer_timeout() -> void:
-	self.queue_free()
+	die()
+	self.get_parent().death()
