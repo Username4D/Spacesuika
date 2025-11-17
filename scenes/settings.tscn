@@ -95,12 +95,14 @@ setting = "animations"
 range = [30, 240]
 
 [node name="SFX Volume" parent="ScrollContainer/VBoxContainer" index="5" instance=ExtResource("3_6wm04")]
+visible = false
 layout_mode = 2
 slider = true
 setting = "sfx_volume"
 range = [0, 10]
 
 [node name="Music Volume" parent="ScrollContainer/VBoxContainer" index="6" instance=ExtResource("3_6wm04")]
+visible = false
 layout_mode = 2
 slider = true
 setting = "music_volume"

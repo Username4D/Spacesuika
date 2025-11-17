@@ -34,3 +34,6 @@ func _on_button_row_pressed(button: Variant) -> void:
 func home():
 	$Camera2D.position.y = 648 / 2
 	$Camera2D.position.x = 1152 / 2
+
+func _ready() -> void:
+	$Camera2D.position_smoothing_enabled = save_handler.settings["animations"]
