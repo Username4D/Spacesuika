@@ -7,6 +7,7 @@ Space Suika was entirely developped using Godot 4.5.1 stable, and can/should be 
 
 Godot: https://godotengine.org/license/
 ## Where can i play
-https://username4d.itch.io/space-suika
+[https://username4d.itch.io/space-suika](https://username4ddev.itch.io/space-suika)
 ## Controls
 Just drag the planets using your mouse cursor
+
