@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctrhp1mvc40vr"]
+
+[ext_resource type="PackedScene" uid="uid://dnrrpjepmv5rw" path="res://scenes/page.tscn" id="1_0bpdh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gnvq"]
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbe4v"]
+
+[node name="page" instance=ExtResource("1_0bpdh")]
+
+[node name="Label" type="Label" parent="." index="1"]
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 1056.0
+offset_bottom = 192.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_3gnvq")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." index="2"]
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 1088.0
+offset_bottom = 608.0
+text = "Godot Engine:
+https://godotengine.org/license/"
+label_settings = SubResource("LabelSettings_nbe4v")
+horizontal_alignment = 1
+vertical_alignment = 1

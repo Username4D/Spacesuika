@@ -3,7 +3,8 @@ extends Node2D
 var settings = false
 @export var play = false
 var achievements = false
-
+var maps = false
+var credits = false
 func _on_button_row_pressed(button: Variant) -> void:
 	match button:
 		'PLAY':
@@ -31,6 +32,23 @@ func _on_button_row_pressed(button: Variant) -> void:
 				settings = true
 			$Camera2D.position.x = 576 + 1152 / 2
 			$Camera2D.position.y = 648 + 648 / 2
+		'MAPS':
+			if not settings:
+				var new = load("res://scenes/maps.tscn").instantiate()
+				new.position.x = -576
+				new.position.y = 648
+				self.get_parent().add_child(new)
+				maps = true
+			$Camera2D.position.x = -576 + 1152 / 2
+			$Camera2D.position.y = 648 + 648 / 2
+		'CREDITS':
+			if not credits:
+				var new = load("res://scenes/credits.tscn").instantiate()
+				new.position.x = -1152
+				self.get_parent().add_child(new)
+				credits = true
+			$Camera2D.position.x = -1152 + 1152 / 2
+			$Camera2D.position.y = 648 / 2
 func home():
 	$Camera2D.position.y = 648 / 2
 	$Camera2D.position.x = 1152 / 2
